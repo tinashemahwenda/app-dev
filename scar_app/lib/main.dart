@@ -1,3 +1,5 @@
+import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(MainApp());
@@ -9,7 +11,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(),
-      home: Login(),
+      home: const Login(),
     );
   }
 }
@@ -19,7 +21,21 @@ class Login extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+        child: Center(
+      child: ListView(
+        children: const [
+          Text('Login'),
+          TextField(
+            decoration: InputDecoration(hintText: 'Username or email'),
+          ),
+          TextField(
+            decoration: InputDecoration(hintText: 'Password'),
+            obscureText: true,
+          ),
+        ],
+      ),
+    ));
   }
 }
 
