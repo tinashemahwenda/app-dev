@@ -24,15 +24,16 @@ class Login extends StatelessWidget {
     return Container(
         child: Center(
       child: ListView(
-        children: const [
-          Text('Login'),
-          TextField(
+        children: [
+          const Text('Login'),
+          const TextField(
             decoration: InputDecoration(hintText: 'Username or email'),
           ),
-          TextField(
+          const TextField(
             decoration: InputDecoration(hintText: 'Password'),
             obscureText: true,
           ),
+          ElevatedButton(onPressed: () {}, child: const Text('Login'))
         ],
       ),
     ));
