@@ -74,7 +74,11 @@ class Login extends StatelessWidget {
                                   builder: (_) => const Dashboard()));
                         },
                         child: const Text('Login')),
-                  ))
+                  )),
+              FloatingActionButton(
+                onPressed: () {},
+                child: const Text('+'),
+              )
             ],
           ),
         ));
