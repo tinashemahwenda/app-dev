@@ -25,14 +25,58 @@ class Login extends StatelessWidget {
             title: const Center(
           child: Text('Login'),
         )),
-        body: Container(
-           height:150.0;
-           width:190.0;
-           padding:EdgeInserts.only(top: 40),
-           decoration: BoxDecoration(
-             
-           )
-           ));
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              const Padding(
+                padding: EdgeInsets.only(top: 60),
+                child: Center(
+                  child: SizedBox(
+                    width: 200,
+                    height: 150,
+                  ),
+                ),
+              ),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Email',
+                    hintText: 'Enter your email or username',
+                  ),
+                ),
+              ),
+              const Padding(
+                padding:
+                    EdgeInsets.only(right: 15, left: 15, top: 15, bottom: 0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    border: OutlineInputBorder(),
+                    labelText: 'Password',
+                    hintText: 'Enter password',
+                  ),
+                  obscureText: true,
+                ),
+              ),
+              Padding(
+                  padding: const EdgeInsets.only(
+                      right: 15, left: 15, top: 15, bottom: 0),
+                  child: Container(
+                    width: 330,
+                    height: 50,
+                    child: ElevatedButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const Dashboard()));
+                        },
+                        child: const Text('Login')),
+                  ))
+            ],
+          ),
+        ));
   }
 }
 
@@ -52,8 +96,9 @@ class Dashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Dashboard'),
-      ),
+          title: const Center(
+        child: Text('Dashboard'),
+      )),
     );
   }
 }
