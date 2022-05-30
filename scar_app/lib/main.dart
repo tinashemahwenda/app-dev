@@ -9,7 +9,9 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+      ),
       home: const Login(),
     );
   }
@@ -23,19 +25,20 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
             elevation: 0,
+            backgroundColor: Colors.deepPurple,
             title: const Center(
               child: Text('Login'),
             )),
         body: SingleChildScrollView(
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.only(top: 60),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
                 child: Center(
                   child: SizedBox(
-                    width: 200,
-                    height: 150,
-                  ),
+                      width: 200,
+                      height: 150,
+                      child: Image.asset('assets/images/account.png')),
                 ),
               ),
               const Padding(
@@ -53,6 +56,9 @@ class Login extends StatelessWidget {
                     EdgeInsets.only(right: 15, left: 15, top: 15, bottom: 0),
                 child: TextField(
                   decoration: InputDecoration(
+                    focusColor: Colors.purpleAccent,
+                    hoverColor: Colors.deepPurple,
+                    fillColor: Colors.deepPurpleAccent,
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter password',
@@ -67,18 +73,27 @@ class Login extends StatelessWidget {
                     width: 330,
                     height: 50,
                     child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.deepPurple),
                         onPressed: () {
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (_) => const Dashboard()));
                         },
-                        child: const Text('Login')),
+                        child: const Text('Next')),
                   )),
-              FloatingActionButton(
-                onPressed: () {},
-                child: const Text('+'),
-              )
+              /*ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => const Register()));
+                },
+                style: ButtonStyle(
+                  backgroundColor:,
+                ),
+                child: const Text('Register new user'),
+                
+              )*/
             ],
           ),
         ));
@@ -100,10 +115,20 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          title: const Center(
-        child: Text('Dashboard'),
+      drawer: Drawer(
+          child: ListView(
+        children: const [
+          DrawerHeader(
+            decoration: BoxDecoration(color: Colors.deepPurple),
+            child: Text('My Drawer'),
+          ),
+        ],
       )),
+      appBar: AppBar(
+          elevation: 0,
+          //automaticallyImplyLeading: false,
+          backgroundColor: Colors.deepPurple,
+          title: const Text('Dashboard')),
     );
   }
 }
