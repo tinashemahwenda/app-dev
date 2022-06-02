@@ -156,10 +156,12 @@ class Dashboard extends StatelessWidget {
             children: [
               ListTile(
                 leading:
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.money)),
-                title: const Text('4500'),
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+                title: const Text('\$4500',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
                 subtitle: const Text('Total Sales'),
-              )
+                trailing: Image.asset('assets/images/login.png'),
+              ),
             ],
           ),
         )));
