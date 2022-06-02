@@ -128,33 +128,27 @@ class Dashboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-          child: ListView(
-        children: const [
-          DrawerHeader(
-            decoration: BoxDecoration(color: Colors.deepPurple),
-            child: Text('My Drawer'),
-          ),
-        ],
-      )),
-      appBar: AppBar(
-        elevation: 0,
-        title: const Text('Dashboard'),
-        actions: [
-          IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (_) => const EditProfile()));
-              },
-              icon: const Icon(Icons.edit)),
-        ],
-      ),
-      body: FloatingActionButton(
-        onPressed: () {},
-        child: const Center(
-          child: Text('Dashboard'),
+        drawer: Drawer(
+            child: ListView(
+          children: const [
+            DrawerHeader(
+              decoration: BoxDecoration(color: Colors.deepPurple),
+              child: Text('My Drawer'),
+            ),
+          ],
+        )),
+        appBar: AppBar(
+          elevation: 0,
+          title: const Text('Dashboard'),
+          actions: [
+            IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (_) => const EditProfile()));
+                },
+                icon: const Icon(Icons.edit)),
+          ],
         ),
-      ),
-    );
+        body: const Center(child: Text('Dashboard')));
   }
 }
