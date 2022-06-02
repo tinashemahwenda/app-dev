@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MainApp());
@@ -9,9 +11,7 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      theme: ThemeData(primaryColor: const Color.fromRGBO(58, 66, 86, 1.0)),
       home: const Login(),
     );
   }
@@ -138,10 +138,23 @@ class Dashboard extends StatelessWidget {
         ],
       )),
       appBar: AppBar(
-          elevation: 0,
-          //automaticallyImplyLeading: false,
-          backgroundColor: Colors.deepPurple,
-          title: const Text('Dashboard')),
+        elevation: 0,
+        title: const Text('Dashboard'),
+        actions: [
+          IconButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (_) => const EditProfile()));
+              },
+              icon: const Icon(Icons.edit)),
+        ],
+      ),
+      body: FloatingActionButton(
+        onPressed: () {},
+        child: const Center(
+          child: Text('Dashboard'),
+        ),
+      ),
     );
   }
 }
