@@ -138,6 +138,7 @@ class Dashboard extends StatelessWidget {
           ],
         )),
         appBar: AppBar(
+          backgroundColor: Colors.deepPurple,
           elevation: 0,
           title: const Text('Dashboard'),
           actions: [
@@ -149,6 +150,17 @@ class Dashboard extends StatelessWidget {
                 icon: const Icon(Icons.edit)),
           ],
         ),
-        body: const Center(child: Text('Dashboard')));
+        body: Center(
+            child: Container(
+          child: ListView(
+            children: const [
+              ListTile(
+                leading: Icon(Icons.add),
+                title: Text('4500'),
+                subtitle: Text('Total Sales'),
+              )
+            ],
+          ),
+        )));
   }
 }
