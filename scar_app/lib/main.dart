@@ -150,20 +150,88 @@ class Dashboard extends StatelessWidget {
                 icon: const Icon(Icons.edit)),
           ],
         ),
-        body: Center(
-            child: Container(
-          child: ListView(
-            children: [
-              ListTile(
-                leading:
-                    IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
-                title: const Text('\$4500',
-                    style: TextStyle(fontWeight: FontWeight.bold)),
-                subtitle: const Text('Total Sales'),
-                trailing: Image.asset('assets/images/login.png'),
-              ),
-            ],
+        body: GridView.count(
+          crossAxisCount: 2,
+          padding: const EdgeInsets.all(16.0),
+          childAspectRatio: 8.0 / 9.0,
+          children: [
+            Card(
+              clipBehavior: Clip.antiAlias,
+            )
+          ],
+        ));
+  }
+}
+
+class PageView extends StatelessWidget {
+  const PageView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Page View'),
+      ),
+      body: ListView(
+        children: [
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
           ),
-        )));
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
+          ),
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
+          ),
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
+          ),
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
+          ),
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
+          ),
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
+          ),
+          ListTile(
+            leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+            title: const Text('\$4500',
+                style: TextStyle(fontWeight: FontWeight.bold)),
+            subtitle: const Text('Total Sales'),
+            trailing: Image.asset('assets/images/login.png'),
+          ),
+        ],
+      ),
+    );
   }
 }
