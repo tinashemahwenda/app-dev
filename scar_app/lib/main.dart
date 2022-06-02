@@ -109,6 +109,19 @@ class Register extends StatelessWidget {
   }
 }
 
+class EditProfile extends StatelessWidget {
+  const EditProfile({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Edit Profile'),
+      ),
+    );
+  }
+}
+
 class Dashboard extends StatelessWidget {
   const Dashboard({Key? key}) : super(key: key);
 
