@@ -153,11 +153,12 @@ class Dashboard extends StatelessWidget {
         body: Center(
             child: Container(
           child: ListView(
-            children: const [
+            children: [
               ListTile(
-                leading: Icon(Icons.add),
-                title: Text('4500'),
-                subtitle: Text('Total Sales'),
+                leading:
+                    IconButton(onPressed: () {}, icon: const Icon(Icons.money)),
+                title: const Text('4500'),
+                subtitle: const Text('Total Sales'),
               )
             ],
           ),
