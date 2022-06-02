@@ -157,6 +157,72 @@ class Dashboard extends StatelessWidget {
           children: [
             Card(
               clipBehavior: Clip.antiAlias,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AspectRatio(
+                      aspectRatio: 18.0 / 11.0,
+                      child: Image.asset('assets/images/money.png')),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                    child: Center(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: const [
+                            Text(
+                              '\$4500',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 30),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'Total Sales',
+                              style: TextStyle(color: Colors.blue),
+                            )
+                          ]),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AspectRatio(
+                      aspectRatio: 18.0 / 11.0,
+                      child: Image.asset('assets/images/money.png')),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                    child: Center(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: const [
+                            Text(
+                              '\$4500',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 30),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'Total Sales',
+                              style: TextStyle(color: Colors.blue),
+                            )
+                          ]),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading:
+                  IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+              title: const Text('Projects'),
             )
           ],
         ));
