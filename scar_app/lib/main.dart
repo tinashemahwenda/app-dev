@@ -150,79 +150,87 @@ class Dashboard extends StatelessWidget {
                 icon: const Icon(Icons.edit)),
           ],
         ),
-        body: GridView.count(
-          crossAxisCount: 2,
-          padding: const EdgeInsets.all(16.0),
-          childAspectRatio: 8.0 / 9.0,
+        body: ListView(
           children: [
-            Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AspectRatio(
-                      aspectRatio: 18.0 / 11.0,
-                      child: Image.asset('assets/images/money.png')),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-                    child: Center(
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
-                            Text(
-                              '\$4500',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 30),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              'Total Sales',
-                              style: TextStyle(color: Colors.blue),
-                            )
-                          ]),
-                    ),
+            const Text('Welcome Back', style: TextStyle(fontSize: 35)),
+            GridView.count(
+              crossAxisCount: 2,
+              padding: const EdgeInsets.all(16.0),
+              childAspectRatio: 8.0 / 9.0,
+              children: [
+                Card(
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AspectRatio(
+                          aspectRatio: 18.0 / 11.0,
+                          child: Image.asset('assets/images/money.png')),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                        child: Center(
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  '\$4500',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30),
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Text(
+                                  'Total Sales',
+                                  style: TextStyle(color: Colors.blue),
+                                )
+                              ]),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            Card(
-              clipBehavior: Clip.antiAlias,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  AspectRatio(
-                      aspectRatio: 18.0 / 11.0,
-                      child: Image.asset('assets/images/money.png')),
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-                    child: Center(
-                      child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: const [
-                            Text(
-                              '\$4500',
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold, fontSize: 30),
-                            ),
-                            SizedBox(
-                              height: 8,
-                            ),
-                            Text(
-                              'Total Sales',
-                              style: TextStyle(color: Colors.blue),
-                            )
-                          ]),
-                    ),
+                ),
+                Card(
+                  clipBehavior: Clip.antiAlias,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      AspectRatio(
+                          aspectRatio: 18.0 / 11.0,
+                          child: Image.asset('assets/images/money.png')),
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                        child: Center(
+                          child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: const [
+                                Text(
+                                  '\$4500',
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30),
+                                ),
+                                SizedBox(
+                                  height: 8,
+                                ),
+                                Text(
+                                  'Total Sales',
+                                  style: TextStyle(color: Colors.blue),
+                                )
+                              ]),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
-              ),
-            ),
-            ListTile(
-              leading:
-                  IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
-              title: const Text('Projects'),
+                ),
+                ListTile(
+                  leading:
+                      IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
+                  title: const Text('Projects'),
+                  tileColor: Colors.blue,
+                )
+              ],
             )
           ],
         ));
