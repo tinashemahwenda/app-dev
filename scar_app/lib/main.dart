@@ -191,7 +191,7 @@ class Register extends StatelessWidget {
                           color: Colors.redAccent,
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(40)),
-                          child: Text(
+                          child: const Text(
                             "Sign Up",
                             style: TextStyle(
                               fontWeight: FontWeight.w600,
