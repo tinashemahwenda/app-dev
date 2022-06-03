@@ -83,17 +83,23 @@ class Login extends StatelessWidget {
                         },
                         child: const Text('Next')),
                   )),
-              /*ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (_) => const Register()));
-                },
-                style: ButtonStyle(
-                  backgroundColor:,
-                ),
-                child: const Text('Register new user'),
-                
-              )*/
+              Padding(
+                  padding: const EdgeInsets.only(
+                      right: 15, left: 15, top: 15, bottom: 0),
+                  child: Container(
+                    width: 330,
+                    height: 50,
+                    child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            primary: Colors.deepOrange),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (_) => const Register()));
+                        },
+                        child: const Text('Click to create new user')),
+                  )),
             ],
           ),
         ));
@@ -105,8 +111,151 @@ class Register extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold();
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
+      appBar: AppBar(
+        elevation: 0,
+        brightness: Brightness.light,
+        backgroundColor: Colors.white,
+        leading: IconButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            icon: Icon(
+              Icons.arrow_back_ios,
+              size: 20,
+              color: Colors.black,
+            )),
+      ),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Container(
+            height: MediaQuery.of(context).size.height,
+            width: double.infinity,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  children: [
+                    Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: [
+                        const Text(
+                          "Sign up",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Text(
+                          "Create an Account,Its free",
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Colors.grey[700],
+                          ),
+                        ),
+                        SizedBox(
+                          height: 30,
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 40),
+                      child: Column(
+                        children: [
+                          makeInput(label: "Email"),
+                          makeInput(label: "Password", obsureText: true),
+                          makeInput(label: "Confirm Pasword", obsureText: true)
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 40),
+                      child: Container(
+                        padding: EdgeInsets.only(top: 3, left: 3),
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(40),
+                            border: Border(
+                                bottom: BorderSide(color: Colors.black),
+                                top: BorderSide(color: Colors.black),
+                                right: BorderSide(color: Colors.black),
+                                left: BorderSide(color: Colors.black))),
+                        child: MaterialButton(
+                          minWidth: double.infinity,
+                          height: 60,
+                          onPressed: () {},
+                          color: Colors.redAccent,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(40)),
+                          child: Text(
+                            "Sign Up",
+                            style: TextStyle(
+                              fontWeight: FontWeight.w600,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("Already have an account? "),
+                        Text(
+                          "Login",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 18),
+                        ),
+                      ],
+                    )
+                  ],
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
+}
+
+Widget makeInput({label, obsureText = false}) {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        label,
+        style: const TextStyle(
+            fontSize: 15, fontWeight: FontWeight.w400, color: Colors.black87),
+      ),
+      SizedBox(
+        height: 5,
+      ),
+      TextField(
+        obscureText: obsureText,
+        decoration: InputDecoration(
+          contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(
+              color: Colors.grey,
+            ),
+          ),
+          border:
+              OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
+        ),
+      ),
+      SizedBox(
+        height: 30,
+      )
+    ],
+  );
 }
 
 class EditProfile extends StatelessWidget {
@@ -150,88 +299,98 @@ class Dashboard extends StatelessWidget {
                 icon: const Icon(Icons.edit)),
           ],
         ),
-        body: ListView(
+        floatingActionButton: FloatingActionButton(
+          backgroundColor: Colors.deepPurple,
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (_) => const PageView()));
+          },
+          child: const Icon(Icons.add),
+        ),
+        body: GridView.count(
+          crossAxisCount: 2,
+          padding: const EdgeInsets.all(16.0),
+          childAspectRatio: 8.0 / 9.0,
           children: [
-            const Text('Welcome Back', style: TextStyle(fontSize: 35)),
-            GridView.count(
-              crossAxisCount: 2,
-              padding: const EdgeInsets.all(16.0),
-              childAspectRatio: 8.0 / 9.0,
-              children: [
-                Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AspectRatio(
-                          aspectRatio: 18.0 / 11.0,
-                          child: Image.asset('assets/images/money.png')),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-                        child: Center(
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  '\$4500',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30),
-                                ),
-                                SizedBox(
-                                  height: 8,
-                                ),
-                                Text(
-                                  'Total Sales',
-                                  style: TextStyle(color: Colors.blue),
-                                )
-                              ]),
-                        ),
-                      ),
-                    ],
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AspectRatio(
+                      aspectRatio: 18.0 / 11.0,
+                      child: Image.asset('assets/images/money.png')),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                    child: Center(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: const [
+                            Text(
+                              '\$4500',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 30),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'Total Sales',
+                              style: TextStyle(color: Colors.purple),
+                            )
+                          ]),
+                    ),
                   ),
-                ),
-                Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AspectRatio(
-                          aspectRatio: 18.0 / 11.0,
-                          child: Image.asset('assets/images/money.png')),
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-                        child: Center(
-                          child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: const [
-                                Text(
-                                  '\$4500',
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30),
-                                ),
-                                SizedBox(
-                                  height: 8,
-                                ),
-                                Text(
-                                  'Total Sales',
-                                  style: TextStyle(color: Colors.blue),
-                                )
-                              ]),
-                        ),
-                      ),
-                    ],
+                ],
+              ),
+            ),
+            Card(
+              clipBehavior: Clip.antiAlias,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  AspectRatio(
+                      aspectRatio: 18.0 / 11.0,
+                      child: Image.asset('assets/images/account.png')),
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+                    child: Center(
+                      child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          children: const [
+                            Text(
+                              '8',
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold, fontSize: 30),
+                            ),
+                            SizedBox(
+                              height: 8,
+                            ),
+                            Text(
+                              'New Clients',
+                              style: TextStyle(color: Colors.purple),
+                            )
+                          ]),
+                    ),
                   ),
-                ),
-                ListTile(
-                  leading:
-                      IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
-                  title: const Text('Projects'),
-                  tileColor: Colors.blue,
-                )
-              ],
-            )
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(2, 12, 4, 8),
+              child: ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
+                child: const Text('Projects'),
+              ),
+            ),
+            Padding(
+                padding: const EdgeInsets.fromLTRB(2, 12, 4, 8),
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(primary: Colors.deepOrange),
+                  child: const Text('Weather'),
+                ))
           ],
         ));
   }
@@ -257,9 +416,9 @@ class PageView extends StatelessWidget {
           ),
           ListTile(
             leading: IconButton(onPressed: () {}, icon: const Icon(Icons.add)),
-            title: const Text('\$4500',
+            title: const Text('350',
                 style: TextStyle(fontWeight: FontWeight.bold)),
-            subtitle: const Text('Total Sales'),
+            subtitle: const Text('New Clients'),
             trailing: Image.asset('assets/images/login.png'),
           ),
           ListTile(
