@@ -173,29 +173,18 @@ class Register extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: Container(
-                        padding: const EdgeInsets.only(top: 3, left: 3),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(40),
-                            border: const Border(
-                                bottom: BorderSide(color: Colors.black),
-                                top: BorderSide(color: Colors.black),
-                                right: BorderSide(color: Colors.black),
-                                left: BorderSide(color: Colors.black))),
-                        child: MaterialButton(
-                          minWidth: double.infinity,
-                          height: 60,
-                          onPressed: () {},
-                          color: Colors.redAccent,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(40)),
-                          child: const Text(
-                            "Sign Up",
-                            style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              fontSize: 16,
-                            ),
-                          ),
-                        ),
+                        width: 330,
+                        height: 50,
+                        child: ElevatedButton(
+                            style: ElevatedButton.styleFrom(
+                                primary: Colors.deepOrange),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (_) => const Register()));
+                            },
+                            child: const Text('Click to create new user')),
                       ),
                     ),
                     const SizedBox(
