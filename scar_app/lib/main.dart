@@ -240,7 +240,7 @@ Widget makeInput({label, obsureText = false}) {
       ),
       TextField(
         obscureText: obsureText,
-        decoration: InputDecoration(
+        decoration: const InputDecoration(
           contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
           enabledBorder: OutlineInputBorder(
             borderSide: BorderSide(
