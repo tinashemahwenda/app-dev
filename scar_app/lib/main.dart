@@ -251,7 +251,7 @@ Widget makeInput({label, obsureText = false}) {
               OutlineInputBorder(borderSide: BorderSide(color: Colors.grey)),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 30,
       )
     ],
