@@ -113,17 +113,8 @@ class Register extends StatelessWidget {
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.white,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: const Icon(
-              Icons.arrow_back_ios,
-              size: 20,
-              color: Colors.black,
-            )),
+        title: const Text('Create User'),
+        backgroundColor: Colors.deepPurple,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -138,6 +129,9 @@ class Register extends StatelessWidget {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
+                        const SizedBox(
+                          height: 30,
+                        ),
                         const Text(
                           "Sign up",
                           style: TextStyle(
@@ -164,6 +158,7 @@ class Register extends StatelessWidget {
                       padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: Column(
                         children: [
+                          makeInput(label: "Username"),
                           makeInput(label: "Email"),
                           makeInput(label: "Password", obsureText: true),
                           makeInput(label: "Confirm Pasword", obsureText: true)
@@ -177,7 +172,7 @@ class Register extends StatelessWidget {
                         height: 50,
                         child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                                primary: Colors.deepOrange),
+                                primary: Colors.deepPurple),
                             onPressed: () {
                               Navigator.push(
                                   context,
@@ -190,17 +185,6 @@ class Register extends StatelessWidget {
                     const SizedBox(
                       height: 20,
                     ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Text("Already have an account? "),
-                        Text(
-                          "Login",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600, fontSize: 18),
-                        ),
-                      ],
-                    )
                   ],
                 ),
               ],
@@ -251,6 +235,7 @@ class EditProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurple,
         title: const Text('Edit Profile'),
       ),
     );
