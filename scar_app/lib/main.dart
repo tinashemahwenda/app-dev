@@ -164,7 +164,7 @@ class Register extends StatelessWidget {
                       ],
                     ),
                     Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40),
+                      padding: const EdgeInsets.symmetric(horizontal: 40),
                       child: Column(
                         children: [
                           makeInput(label: "Email"),
