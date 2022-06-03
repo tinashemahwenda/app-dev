@@ -206,7 +206,7 @@ class Register extends StatelessWidget {
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+                      children: const [
                         Text("Already have an account? "),
                         Text(
                           "Login",
