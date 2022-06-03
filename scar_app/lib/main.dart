@@ -158,7 +158,7 @@ class Register extends StatelessWidget {
                             color: Colors.grey[700],
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 30,
                         )
                       ],
