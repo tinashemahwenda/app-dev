@@ -179,7 +179,7 @@ class Register extends StatelessWidget {
                         padding: EdgeInsets.only(top: 3, left: 3),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(40),
-                            border: Border(
+                            border: const Border(
                                 bottom: BorderSide(color: Colors.black),
                                 top: BorderSide(color: Colors.black),
                                 right: BorderSide(color: Colors.black),
