@@ -24,13 +24,16 @@ class Splash extends StatelessWidget {
     return AnimatedSplashScreen(
       splash: Column(
         children: [
-          Lottie.asset('assets/images/loaders.json'),
-          const Text('Scarlab Ai')
+          Lottie.asset('assets/images/loader.json'),
+          const Text(
+            'Scarlab Ai',
+            style: TextStyle(fontSize: 40),
+          )
         ],
       ),
       nextScreen: const Home(),
       duration: 5000,
-      splashIconSize: 100000,
+      splashIconSize: 500,
     );
   }
 }
