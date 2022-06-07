@@ -27,7 +27,7 @@ class Splash extends StatelessWidget {
           Lottie.asset('assets/images/loader.json'),
           const Text(
             'Scarlab Ai',
-            style: TextStyle(fontSize: 40),
+            style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
           )
         ],
       ),
