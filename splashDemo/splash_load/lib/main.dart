@@ -9,9 +9,12 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Splash(),
+    return MaterialApp(
+      home: const Splash(),
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+          backgroundColor: Colors.amberAccent,
+          primaryColor: Colors.amberAccent),
     );
   }
 }
