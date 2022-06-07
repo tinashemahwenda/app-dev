@@ -10,7 +10,10 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedSplashScreen(
       splash: Column(
-        children: [Image.asset('assets/images/loader.json')],
+        children: [
+          Image.asset('assets/images/loader.json'),
+          const Text('Scarlab Ai')
+        ],
       ),
       nextScreen: const Home(),
     );
