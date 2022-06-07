@@ -30,7 +30,7 @@ class Splash extends StatelessWidget {
       ),
       nextScreen: const Home(),
       duration: 5000,
-      splashIconSize: 800,
+      splashIconSize: 100000,
     );
   }
 }
