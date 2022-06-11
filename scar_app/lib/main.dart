@@ -9,7 +9,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primaryColor: const Color.fromRGBO(58, 66, 86, 1.0)),
+      theme: ThemeData(
+        primaryColor: Colors.deepPurple,
+        primarySwatch: Colors.deepPurple,
+        secondaryHeaderColor: Colors.deepOrange,
+      ),
       home: const Login(),
     );
   }
@@ -23,7 +27,6 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
             elevation: 0,
-            backgroundColor: Colors.deepPurple,
             title: const Center(
               child: Text('Login'),
             )),
@@ -54,9 +57,6 @@ class Login extends StatelessWidget {
                     EdgeInsets.only(right: 15, left: 15, top: 15, bottom: 0),
                 child: TextField(
                   decoration: InputDecoration(
-                    focusColor: Colors.purpleAccent,
-                    hoverColor: Colors.deepPurple,
-                    fillColor: Colors.deepPurpleAccent,
                     border: OutlineInputBorder(),
                     labelText: 'Password',
                     hintText: 'Enter password',
@@ -71,8 +71,6 @@ class Login extends StatelessWidget {
                     width: 330,
                     height: 50,
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.deepPurple),
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -111,10 +109,8 @@ class Register extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Colors.white,
       appBar: AppBar(
         title: const Text('Create User'),
-        backgroundColor: Colors.deepPurple,
       ),
       body: SafeArea(
         child: SingleChildScrollView(
@@ -171,8 +167,6 @@ class Register extends StatelessWidget {
                         width: 330,
                         height: 50,
                         child: ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                                primary: Colors.deepPurple),
                             onPressed: () {
                               Navigator.push(
                                   context,
@@ -235,7 +229,6 @@ class EditProfile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepPurple,
         title: const Text('Edit Profile'),
       ),
     );
@@ -252,13 +245,11 @@ class Dashboard extends StatelessWidget {
             child: ListView(
           children: const [
             DrawerHeader(
-              decoration: BoxDecoration(color: Colors.deepPurple),
               child: Text('My Drawer'),
             ),
           ],
         )),
         appBar: AppBar(
-          backgroundColor: Colors.deepPurple,
           elevation: 0,
           title: const Text('Dashboard'),
           actions: [
@@ -271,7 +262,6 @@ class Dashboard extends StatelessWidget {
           ],
         ),
         floatingActionButton: FloatingActionButton(
-          backgroundColor: Colors.deepPurple,
           onPressed: () {
             Navigator.push(
                 context, MaterialPageRoute(builder: (_) => const PageView()));
@@ -351,7 +341,6 @@ class Dashboard extends StatelessWidget {
               padding: const EdgeInsets.fromLTRB(2, 12, 4, 8),
               child: ElevatedButton(
                 onPressed: () {},
-                style: ElevatedButton.styleFrom(primary: Colors.deepPurple),
                 child: const Text('Projects'),
               ),
             ),
