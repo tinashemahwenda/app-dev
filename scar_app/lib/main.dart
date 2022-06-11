@@ -15,7 +15,7 @@ class MainApp extends StatelessWidget {
         primarySwatch: Colors.deepPurple,
         secondaryHeaderColor: Colors.deepOrange,
       ),
-      home: const Login(),
+      home: const SplashScreen(),
     );
   }
 }
@@ -28,11 +28,22 @@ class SplashScreen extends StatelessWidget {
     return AnimatedSplashScreen(
       splash: Column(children: [
         Center(
-          child: Image.asset('assets/images/login.png'),
+          child: Image.asset('assets/images/logo.png'),
         ),
-        Text('ScarlabAi')
+        const Padding(
+            padding: EdgeInsets.only(top: 10),
+            child: Text(
+              'ScarlabAi',
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+            )),
+        const Text(
+          'Automated the boring farm!',
+          style: TextStyle(fontSize: 10),
+        )
       ]),
-      nextScreen: Login(),
+      nextScreen: const Login(),
+      splashIconSize: 160,
+      duration: 2500,
     );
   }
 }
