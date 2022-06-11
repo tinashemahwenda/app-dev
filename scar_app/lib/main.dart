@@ -12,7 +12,7 @@ class MainApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primaryColor: Colors.deepPurple,
-        primarySwatch: Colors.deepPurple,
+        primarySwatch: Colors.green,
         secondaryHeaderColor: Colors.deepOrange,
       ),
       home: const SplashScreen(),
@@ -34,16 +34,22 @@ class SplashScreen extends StatelessWidget {
             padding: EdgeInsets.only(top: 10),
             child: Text(
               'ScarlabAi',
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.blueGrey),
             )),
-        const Text(
-          'Automated the boring farm!',
-          style: TextStyle(fontSize: 10),
+        const Padding(
+          padding: EdgeInsets.only(top: 7.0),
+          child: Text(
+            'Automated the boring farm!',
+            style: TextStyle(fontSize: 10, color: Colors.green),
+          ),
         )
       ]),
       nextScreen: const Login(),
       splashIconSize: 160,
-      duration: 2500,
+      duration: 3500,
     );
   }
 }
@@ -115,8 +121,7 @@ class Login extends StatelessWidget {
                     width: 330,
                     height: 50,
                     child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                            primary: Colors.deepOrange),
+                        style: ElevatedButton.styleFrom(primary: Colors.grey),
                         onPressed: () {
                           Navigator.push(
                               context,
@@ -326,7 +331,7 @@ class Dashboard extends StatelessWidget {
                             ),
                             Text(
                               'Total Sales',
-                              style: TextStyle(color: Colors.purple),
+                              style: TextStyle(color: Colors.grey),
                             )
                           ]),
                     ),
@@ -358,7 +363,7 @@ class Dashboard extends StatelessWidget {
                             ),
                             Text(
                               'New Clients',
-                              style: TextStyle(color: Colors.purple),
+                              style: TextStyle(color: Colors.grey),
                             )
                           ]),
                     ),
@@ -377,7 +382,7 @@ class Dashboard extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(2, 12, 4, 8),
                 child: ElevatedButton(
                   onPressed: () {},
-                  style: ElevatedButton.styleFrom(primary: Colors.deepOrange),
+                  style: ElevatedButton.styleFrom(primary: Colors.grey),
                   child: const Text('Weather'),
                 ))
           ],
